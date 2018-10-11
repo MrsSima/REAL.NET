@@ -101,12 +101,6 @@
                     </DataGrid.Columns>
                 </DataGrid>
 
-                <Button 
-                    Grid.Row="5"
-                    Content="Constraints"
-                    HorizontalAlignment="Stretch"
-                    VerticalAlignment="Bottom"
-                    Click="ConstraintsButtonClick" Height="26"/>
                 <Button x:Name="executeButton" 
                     Grid.Row="6"
                     Content="Execute"
