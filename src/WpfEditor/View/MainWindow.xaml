@@ -53,8 +53,8 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" MinWidth="100"/>
             <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
@@ -70,8 +70,16 @@
             </MenuItem>
         </Menu>
 
+        <!-- LeftPanel -->
+        <Grid
+            x:Name="constraintsGrid"
+            Grid.Row="1"
+            Grid.Column="0"
+            HorizontalAlignment="Left"/>
+
+
         <!-- Area and console -->
-        <Grid Grid.Row="1" Grid.Column="0">
+        <Grid Grid.Row="1" Grid.Column="1">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -95,10 +103,10 @@
         </Grid>
 
         <!-- GridSplitter for RightPanel-->
-        <GridSplitter Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Center" Width="5"/>
+        <GridSplitter Grid.Row="1" Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Center" Width="5"/>
 
         <!-- RightPanel -->
-        <DockPanel Grid.Row="1" Grid.Column="2">
+        <DockPanel Grid.Row="1" Grid.Column="3">
             <Grid x:Name="rightPanel">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -125,13 +133,6 @@
                         <DataGridTextColumn Header="Value" IsReadOnly="False" Binding="{Binding Value}"/>
                     </DataGrid.Columns>
                 </DataGrid>
-
-                <Button 
-                    Grid.Row="5"
-                    Content="Constraints"
-                    HorizontalAlignment="Stretch"
-                    VerticalAlignment="Bottom"
-                    Click="ConstraintsButtonClick" Height="26"/>
             </Grid>
 
         </DockPanel>

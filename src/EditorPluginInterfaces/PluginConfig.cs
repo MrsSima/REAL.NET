@@ -14,6 +14,7 @@
  
 namespace EditorPluginInterfaces
 {
+    using System.Windows.Controls;
     using Toolbar;
 
     /// <summary>
@@ -47,6 +48,11 @@ namespace EditorPluginInterfaces
         public IPalette Palette { get; }
 
         /// <summary>
+        /// DockPanel for Constraints plugin that should be given to plugin
+        /// </summary>
+        public Grid ConstraintsGrid { get; }
+
+        /// <summary>
         /// Initializes a new instance of <see cref="PluginConfig"/> 
         /// </summary>
         /// <param name="model">Model of the editor, allows to manipulate repository and keep consistence 
@@ -55,13 +61,14 @@ namespace EditorPluginInterfaces
         /// <param name="toolbar">Toolbar</param>
         /// <param name="console">Console</param>
         /// <param name="palette">Palette</param>
-        public PluginConfig(IModel model, IScene scene, IToolbar toolbar, IConsole console, IPalette palette)
+        public PluginConfig(IModel model, IScene scene, IToolbar toolbar, IConsole console, IPalette palette, Grid constraintsGrid)
         {
             this.Model = model;
             this.Scene = scene;
             this.Toolbar = toolbar;
             this.Console = console;
             this.Palette = palette;
+            this.ConstraintsGrid = constraintsGrid;
         }
     }
 }
